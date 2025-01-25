@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://backend-garment-store-bice.vercel.app/clients";
+const API_URL = "https://backend-garment-store-bice.vercel.app/";
 
 export const getClients = async () => {
   try {
