@@ -9,7 +9,9 @@ const API_URL = axios.create({
 
 export const getClients = async () => {
   try {
-    const response = await axios.get("/api/clients", { withCredentials: true });
+    const response = await API_URL.get("/api/clients", {
+      withCredentials: true,
+    });
     return response.data.data;
   } catch (error) {
     console.error(error);
@@ -19,7 +21,7 @@ export const getClients = async () => {
 
 export const createClient = async (clientData) => {
   try {
-    const response = await axios.post("/api/clients", clientData, {
+    const response = await API_URL.post("/api/clients", clientData, {
       withCredentials: true,
     });
     return response.data.data;
@@ -31,7 +33,7 @@ export const createClient = async (clientData) => {
 
 export const getClientById = async (id, clientData) => {
   try {
-    const response = await axios.get(`${"/api/clients"}/${id}`, {
+    const response = await API_URL.get(`${"/api/clients"}/${id}`, {
       withCredentials: true,
     });
     return response.data.data;
@@ -43,7 +45,7 @@ export const getClientById = async (id, clientData) => {
 
 export const updateClient = (id, clientData) => {
   try {
-    const response = axios.put(`${"/api/clients"}/${id}`, clientData, {
+    const response = API_URL.put(`${"/api/clients"}/${id}`, clientData, {
       withCredentials: true,
     });
     return response.data.data;
@@ -55,7 +57,7 @@ export const updateClient = (id, clientData) => {
 
 export const deleteClient = async (id) => {
   try {
-    const response = await axios.delete(`${"/api/clients"}/${id}`, {
+    const response = await API_URL.delete(`${"/api/clients"}/${id}`, {
       withCredentials: true,
     });
     return response.data.data;
